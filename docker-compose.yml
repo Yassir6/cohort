@@ -1,0 +1,17 @@
+services:
+  cohort:
+    build: .
+    container_name: cohort
+    restart: unless-stopped
+    environment:
+      APP_NAME: Cohort
+      JOIN_CODE: ""          # set a class code to keep strangers out, e.g. "ml-2026"
+      DELETE_VOTES: "5"      # classmates who must agree before a post is deleted
+      MAX_UPLOAD_MB: "25"
+      TRUST_PROXY: "1"       # set to "0" if nothing (like Traefik or nginx) sits in front
+    volumes:
+      - cohort-data:/data
+    ports:
+      - "8090:8090"
+volumes:
+  cohort-data:

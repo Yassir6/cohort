@@ -1,0 +1,12 @@
+{
+  "name": "cohort",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared deadlines, exams, homework and announcements for a class. No accounts, no dependencies.",
+  "main": "server.js",
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "admin": "node --disable-warning=ExperimentalWarning admin.js"
+  }
+}
